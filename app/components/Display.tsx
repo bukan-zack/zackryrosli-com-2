@@ -21,7 +21,7 @@ const display = cva("text-black", {
     },
     defaultVariants: {
         variant: "normal",
-        size: "sm",
+        size: "md",
     },
 });
 

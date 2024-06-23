@@ -7,7 +7,8 @@ const ppMori = localFont({
 });
 
 export const metadata: Metadata = {
-    title: "Zack",
+    title: "Zackry Rosli",
+    description: "A self-driven Go enthusiast hailing from Sarawak, Malaysia, bringing 4 years of hardcore experience to the table. Thrives on crafting innovative solutions with absolute precision."
 };
 
 export default function RootLayout({
