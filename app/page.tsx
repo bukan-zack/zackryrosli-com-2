@@ -101,7 +101,7 @@ export default function Page() {
                     <Display size="3xl" variant="semibold">
                         My <span className="underline">Latest</span> Blogs
                     </Display>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-6">
                         {blogs.map((blog, ix) => (
                             <Link key={ix} href={blog.href} target="_blank">
                                 <Card className="px-5 md:px-8 py-6 flex flex-col" interactable>
