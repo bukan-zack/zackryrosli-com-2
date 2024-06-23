@@ -64,7 +64,7 @@ export default function Page() {
                     viewport={{ once: true }}
                 >
                     <Card className="md:min-h-screen flex flex-col items-center justify-center" interactable>
-                        <div className="px-5 md:px-8 py-4 flex flex-col">
+                        <div className="px-6 md:px-8 py-4 flex flex-col">
                             <Display size="2xl" variant="semibold">
                                 Hello there!
                             </Display>
@@ -135,10 +135,10 @@ export default function Page() {
                                     <Display size="xl" variant="semibold" className="mt-4">
                                         {exp.position}
                                     </Display>
-                                    <Display className="mt-1 md:mt-2">
+                                    <Display className="md:mt-2">
                                         {exp.company} ({exp.employment})
                                     </Display>
-                                    <Display className="mt-1 md:mt-2" size="sm">
+                                    <Display className="md:mt-2" size="sm">
                                         {exp.from} - {exp.till}
                                     </Display>
                                 </Card>
