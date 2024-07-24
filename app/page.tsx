@@ -28,7 +28,7 @@ const workExperience = [
         company: "Decube",
         position: "Software Engineer",
         from: "May 2024",
-        till: "Present",
+        till: "July 2024",
         image: "/decube.png",
         employment: "Contract",
         href: "https://decube.io",
@@ -76,7 +76,7 @@ export default function Page() {
                                 Thrives on crafting innovative solutions with absolute precision.
                             </Display>
                             <div className="z-10 flex flex-col md:flex-row mt-6 gap-4 md:gap-8">
-                                <Link href="https://x.com/zack0x64" target="_blank">
+                                <Link href="https://x.com/bukan_zack" target="_blank">
                                     <Button variant="tropical_indigo">
                                         Follow on X
                                     </Button>
