@@ -1,10 +1,8 @@
-"use client";
-
+import Link from "next/link";
 import { Display } from "@/app/components/Display";
 import { Button } from "@/app/components/Button";
 import { Card } from "@/app/components/Card";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import { Motion } from "@/app/components/Motion";
 
 function truncate(str: string, max: number) {
     return str.length > max ? str.substr(0, max-1) + '...' : str;
@@ -57,7 +55,7 @@ export default function Page() {
     return (
         <main className="flex flex-col min-h-screen px-6 md:px-16">
             <section className="min-h-screen w-full flex items-center justify-center py-16">
-                <motion.div
+                <Motion
                     initial={{ opacity: 0, translateY: -100 }}
                     whileInView={{ opacity: 1, translateY: 0 }}
                     transition={{ type: "easeInOut", duration: 0.4 }}
@@ -89,10 +87,10 @@ export default function Page() {
                             </div>
                         </div>
                     </Card>
-                </motion.div>  
+                </Motion>  
             </section>
             <section className="py-8 md:py-16">
-                <motion.div
+                <Motion
                     initial={{ opacity: 0, translateY: -100 }}
                     whileInView={{ opacity: 1, translateY: 0 }}
                     transition={{ type: "easeInOut", duration: 0.4 }}
@@ -115,10 +113,10 @@ export default function Page() {
                             </Link>
                         ))}
                     </div>
-                </motion.div>
+                </Motion>
             </section>
             <section className="py-8 md:py-16">
-                <motion.div
+                <Motion
                     initial={{ opacity: 0, translateY: -100 }}
                     whileInView={{ opacity: 1, translateY: 0 }}
                     transition={{ type: "easeInOut", duration: 0.4 }}
@@ -145,7 +143,7 @@ export default function Page() {
                             </Link>
                         ))}
                     </div>
-                </motion.div>
+                </Motion>
             </section>
             <Display className="py-8" size="sm">
                 &copy; {new Date().getFullYear()} Zackry Rosli. All rights reserved.
