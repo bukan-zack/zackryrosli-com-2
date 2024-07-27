@@ -5,6 +5,8 @@ import { Motion } from "@/app/components/Motion";
 import { sql } from "@vercel/postgres";
 import { Question } from "@/app/types";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
     const { rows } = await sql`SELECT * FROM questions ORDER BY question_id DESC LIMIT 100`;
     const questions = rows as Question[]; 
