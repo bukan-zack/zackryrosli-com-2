@@ -5,7 +5,7 @@ import { Display } from "@/app/components/Display";
 import { Button } from "@/app/components/Button";
 import { Motion } from "@/app/components/Motion";
 import { Question } from "@/app/types";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import * as htmlToImage from "html-to-image";
 
 export default function QuestionPage({
@@ -13,15 +13,20 @@ export default function QuestionPage({
 }: {
     question: Question;
 }) {
+    const [answering, setAnswering] = useState(false);
     const cardRef = useRef<HTMLDivElement>(null);
 
     async function handleAnswer() {
+        setAnswering(true);
+
         const image = await htmlToImage.toPng(cardRef.current!);
         const link = document.createElement("a");
 
         link.download = `ask_me_anything_${question.question_id}.png`;
         link.href = image;
         link.click();
+
+        setAnswering(false);
     }
 
     return (
@@ -45,11 +50,13 @@ export default function QuestionPage({
                                 <Display className="break-all w-full border-2 border-black px-6 py-4 font-mono">
                                     {question.message}
                                 </Display>
-                                <div className="mt-4">
-                                    <Button variant="tropical_indigo" onClick={() => handleAnswer()}>
-                                        Answer
-                                    </Button>
-                                </div>
+                                {!answering && (
+                                    <div className="mt-4">
+                                        <Button variant="tropical_indigo" onClick={() => handleAnswer()}>
+                                            Answer
+                                        </Button>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     </Card>
