@@ -18,13 +18,14 @@ export default function QuestionPage({
 
     async function handleAnswer() {
         setAnswering(true);
+        setTimeout(async () => {
+            const image = await htmlToImage.toPng(cardRef.current!);
+            const link = document.createElement("a");
 
-        const image = await htmlToImage.toPng(cardRef.current!);
-        const link = document.createElement("a");
-
-        link.download = `ask_me_anything_${question.question_id}.png`;
-        link.href = image;
-        link.click();
+            link.download = `ask_me_anything_${question.question_id}.png`;
+            link.href = image;
+            link.click();
+        }, 100);
 
         setAnswering(false);
     }
