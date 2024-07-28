@@ -5,15 +5,19 @@ import { Display } from "@/app/components/Display";
 import { Button } from "@/app/components/Button";
 import { Motion } from "@/app/components/Motion";
 import { Question } from "@/app/types";
-import * as htmlToImage from 'html-to-image';
 import { useRef } from "react";
+import * as htmlToImage from "html-to-image";
 
-export default function QuestionPage({ question }: { question: Question; }) {
+export default function QuestionPage({
+    question,
+}: {
+    question: Question;
+}) {
     const cardRef = useRef<HTMLDivElement>(null);
 
     async function handleAnswer() {
         const image = await htmlToImage.toPng(cardRef.current!);
-        const link = document.createElement('a');
+        const link = document.createElement("a");
 
         link.download = `ask_me_anything_${question.question_id}.png`;
         link.href = image;
@@ -26,20 +30,22 @@ export default function QuestionPage({ question }: { question: Question; }) {
                 <Motion
                     className="w-full max-w-2xl"
                     initial={{ opacity: 0, translateY: -100 }}
-                    whileInView={{ opacity: 1, translateY: 0 }}
+                    animate={{ opacity: 1, translateY: 0 }}
                     transition={{ type: "easeInOut", duration: 0.4 }}
-                    viewport={{ once: true }}
                 >
                     <Card ref={cardRef}>
-                        <div className="px-6 md:px-8 py-4 flex flex-col">
-                            <Display size="2xl" variant="semibold">
+                        <div className="px-6 md:px-8 py-6 flex flex-col">
+                            <Display size="sm">
+                                @bukan_zack
+                            </Display>
+                            <Display size="2xl" variant="semibold" className="mt-1">
                                 Ask Me Anything
                             </Display>
-                            <div className="mt-4">
-                                <Display className="w-full border-2 border-black px-6 py-4 font-mono">
+                            <div className="mt-4 z-10">
+                                <Display className="break-all w-full border-2 border-black px-6 py-4 font-mono">
                                     {question.message}
                                 </Display>
-                                <div className="mt-2">
+                                <div className="mt-4">
                                     <Button variant="tropical_indigo" onClick={() => handleAnswer()}>
                                         Answer
                                     </Button>
