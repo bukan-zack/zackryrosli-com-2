@@ -52,7 +52,7 @@ export default function AskMeAnythingPage() {
                 </section>
             </main>    
             {openModal && (
-                <div className="z-[99] inset-0 fixed w-full min-h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center">
+                <div className="z-[99] inset-0 fixed w-full min-h-screen px-6 md:px-16 bg-black bg-opacity-50 flex flex-col items-center justify-center">
                     <Motion
                         className="w-full max-w-2xl"
                         initial={{ opacity: 0, translateY: -100 }}
